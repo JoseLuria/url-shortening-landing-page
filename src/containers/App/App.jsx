@@ -20,6 +20,7 @@ function App() {
     const result = await response.json()
     if(result.ok){
       setLinks([...links, result.result])
+      setUrlText("")
     }else{
       setError(true)  
     }
@@ -31,7 +32,7 @@ function App() {
       handleApi(urlText)
     }else {
       setError("Please add a link")
-    } 
+    }
   }
 
   links.length > 5 && links.splice(0, 1)

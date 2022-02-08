@@ -1,0 +1,73 @@
+@use "../../scss/utils";
+
+.form {
+  position: absolute;
+  background-color: utils.$dark-purple;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - utils.rem(48));
+  max-width: utils.$max-w;
+  border-radius: utils.rem(10);
+  padding: utils.rem(24);
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../assets/bg-shorten-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: right top;
+
+  @include utils.breakpoint(utils.$size-md) {
+    align-items: center;
+    flex-direction: row;
+    padding: utils.rem(52) utils.rem(64);
+    gap: utils.rem(24);
+    background-image: url("../../assets/bg-shorten-desktop.svg");
+    background-size: cover;
+    background-position: 0;
+  }
+
+  &-text {
+    width: 100%;
+    height: utils.rem(48);
+    padding: 0 utils.rem(16);
+    font-size: utils.rem(16);
+    border: solid utils.rem(3) utils.$transparent;
+    border-radius: utils.rem(5);
+    outline: none;
+    transition-duration: 200ms;
+
+    &::placeholder {
+      color: utils.$gray;
+    }
+
+    @include utils.breakpoint(utils.$size-md) {
+      height: utils.rem(57.2);
+      flex-basis: max-contend;
+      font-size: utils.rem(20);
+    }
+  }
+
+  .input-error {
+    border: solid utils.rem(3) utils.$red;
+    margin-bottom: 0;
+
+    &::placeholder {
+      color: utils.$red;
+      opacity: 50%;
+    }
+  }
+
+  .error-message {
+    color: utils.$red;
+    font-style: italic;
+    font-size: utils.rem(12);
+    margin-bottom: utils.rem(16);
+    animation: fade-in 200ms ease-in-out forwards;
+    
+    @include utils.breakpoint(utils.$size-md) {
+      position: absolute;
+      bottom: utils.rem(12);
+      font-size: utils.rem(16);
+    }
+  }
+}

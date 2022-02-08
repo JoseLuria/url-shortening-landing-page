@@ -1,0 +1,50 @@
+@use "../../scss/utils";
+
+.link-item {
+	width: 100%;
+	background-color: utils.$transparent;
+	padding: utils.rem(16);
+	border-radius: utils.rem(5);
+	font-size: utils.rem(16);
+	animation: fade-in 200ms ease-in-out forwards;
+
+	@include utils.breakpoint(utils.$size-md) {
+		display: flex;
+		align-items: center;
+		font-size: utils.rem(20);
+		padding: utils.rem(16) utils.rem(24);	
+	}
+
+	&-url {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		margin-bottom: utils.rem(6);
+		color: utils.$dark-gray;
+	
+		@include utils.breakpoint(utils.$size-md) {
+			margin: 0;
+		}
+	}
+
+	&-line {
+		background-color: utils.$gray;
+		width: 100%;
+		height: utils.rem(1);
+		
+		@include utils.breakpoint(utils.$size-md) {
+			display: none;
+		}	
+	}
+
+	&-shorter {
+		color: utils.$cyan;
+		margin: utils.rem(6) 0 utils.rem(8) ;
+		
+		@include utils.breakpoint(utils.$size-md) {
+			margin: 0;
+			margin-right: utils.rem(24);
+			margin-left: auto;
+		}		
+	}
+}

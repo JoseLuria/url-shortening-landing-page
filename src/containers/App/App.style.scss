@@ -1,0 +1,10 @@
+@use "../../scss/utils";
+
+.App {
+  width: 100%;
+  padding-top: utils.rem(40);
+
+  @include utils.breakpoint(utils.$size-md){
+    padding-top: utils.rem(48);  
+  }
+}

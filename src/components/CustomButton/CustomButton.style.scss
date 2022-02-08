@@ -1,0 +1,60 @@
+@use "../../scss/utils";
+
+.custom-button {
+  width: 100%;  
+  padding: utils.rem(10) 0;
+  background-color: utils.$cyan;
+  color: utils.$transparent;
+  font-weight: 700;
+  font-size: utils.rem(16);
+  border-radius: utils.rem(5);
+  font-size: utils.rem(16);
+
+  @include utils.breakpoint(utils.$size-md){
+    min-width: utils.rem(103);
+    width: auto;
+    cursor: pointer;
+    font-size: utils.rem(15);
+
+    &:hover {
+      background-color: utils.$light-cyan;
+      transition: utils.$duration;
+    }
+  }
+}
+
+.lg {
+  font-size: utils.rem(18);
+
+  @include utils.breakpoint(utils.$size-md){
+    min-width: utils.rem(188);
+    font-size: utils.rem(20);
+    padding: utils.rem(17);
+  }
+}
+
+.button-rounded {
+  border-radius: utils.rem(28);
+  font-size: utils.rem(20);
+  padding: utils.rem(14) utils.rem(40);
+  width: auto;
+}
+
+.button-navbar {
+  border-radius: utils.rem(28); 
+  font-size: utils.rem(18);
+  padding: utils.rem(9) utils.rem(24);
+
+  @include utils.breakpoint(utils.$size-md){
+    font-size: utils.rem(15);
+  }
+}
+
+.copy-button {
+  background-color: utils.$dark-purple;
+  transition-duration: 100ms;
+  
+  &:hover {
+    background-color: utils.$purple;
+  }
+}

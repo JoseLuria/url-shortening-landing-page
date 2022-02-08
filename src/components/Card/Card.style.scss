@@ -1,0 +1,63 @@
+@use "../../scss/utils";
+
+.card {
+  width: 100%;
+  max-width: utils.rem(350);
+  position: relative;
+  padding-top: utils.rem(44);
+
+  &-logo-container {
+    top: 0;
+    position: absolute;
+    background-color: utils.$dark-purple;
+    width: utils.rem(88);
+    height: utils.rem(88);
+    border-radius: 50%;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    .card-logo-icon {
+      width: utils.rem(40);
+      margin: auto;
+    }
+
+    @include utils.breakpoint(utils.$size-xl){
+      left: utils.rem(32);
+      transform: none;
+    } 
+  }
+
+  &-container {
+    padding: utils.rem(77) utils.rem(32) utils.rem(41);
+    background-color: utils.$transparent;
+    border-radius: utils.rem(5);
+    text-align: center;
+
+    &-title {
+      font-weight: 700;
+      font-size: utils.rem(22);
+      margin-bottom: utils.rem(12);
+      color: utils.$dark-gray;
+    }
+
+    &-text{
+      font-size: utils.rem(15);
+      color: utils.$gray;
+    }
+
+    @include utils.breakpoint(utils.$size-xl){
+      text-align: left;
+    }
+  }
+
+  @include utils.breakpoint(utils.$size-xl){
+    &:nth-child(2){
+      margin-top: utils.rem(44);
+    }
+    
+    &:nth-child(3) {
+      margin-top: utils.rem(88);
+    }
+  }
+}

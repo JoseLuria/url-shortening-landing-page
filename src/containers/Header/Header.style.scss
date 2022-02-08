@@ -1,0 +1,97 @@
+@use "../../scss/utils";
+
+.header {
+  width: 100%;
+  padding-bottom: utils.rem(88);
+  
+  @include utils.breakpoint(utils.$size-md) {
+    padding-bottom: utils.rem(68); 
+  }
+
+  &-contend {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @include utils.breakpoint(utils.$size-md) {
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+
+    .hero{
+      height: utils.rem(337);
+      padding-left: utils.rem(24);
+      overflow: hidden;
+      margin-bottom: utils.rem(37);
+      
+      @include utils.breakpoint(utils.$size-md) {
+        width: 50%;
+      }
+
+      @include utils.breakpoint(utils.$size-xl) {
+        height: utils.rem(482);
+        padding-left: utils.rem(110);
+      }
+
+      &-image {
+        height: 100%;
+      }
+    }
+
+    .header-info {
+      @include utils.breakpoint(utils.$size-md) {
+        width: 50%;
+      }
+
+      .info {
+        width: 100%;
+        max-width: utils.rem(565);
+        margin-left: auto;
+        padding: 0 utils.rem(24);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        @include utils.breakpoint(utils.$size-md){
+          display: block;
+          text-align: left;
+        }
+
+        @include utils.breakpoint(utils.$size-xl){
+          padding: 0;
+        }
+
+        &-title {
+          color: utils.$dark-gray;
+          font-size: utils.rem(42); 
+          margin-bottom: utils.rem(15);
+          line-height: utils.rem(48); 
+          
+          @include utils.breakpoint(utils.$size-lg){
+            font-size: utils.rem(60); 
+            line-height: utils.rem(70); 
+          }
+          
+          @include utils.breakpoint(utils.$size-xl){
+            font-size: utils.rem(80); 
+            margin-bottom: utils.rem(5);
+            line-height: utils.rem(90);
+            letter-spacing: -2px;
+          }
+        }
+
+        &-text {
+          color: utils.$gray;
+          font-size: utils.rem(18);
+          margin-bottom: utils.rem(32); 
+        
+          @include utils.breakpoint(utils.$size-xl){
+            font-size: utils.rem(22); 
+            margin-bottom: utils.rem(38); 
+          }
+        }
+      }
+    }
+  }
+}

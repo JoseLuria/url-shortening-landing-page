@@ -1,0 +1,108 @@
+@use "../../scss/utils";
+
+.footer {
+  width: 100%;
+  background-color: utils.$dark-gray;
+  padding: utils.rem(54) utils.rem(24);
+
+  @include utils.breakpoint(utils.$size-lg){
+    padding: utils.rem(72) utils.rem(24);
+  }
+
+  &-container {
+    margin: auto;
+    width: 100%;
+    max-width: utils.$max-w;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: utils.rem(49);
+
+    @include utils.breakpoint(utils.$size-lg){
+      flex-direction: row;
+      align-items: unset;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      width: utils.rem(120.04);
+      height: utils.rem(32.67);
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(196deg) brightness(113%) contrast(100%);
+    }
+
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      
+      @include utils.breakpoint(utils.$size-lg){
+        flex-direction: row;
+      }
+
+      .footer-lists {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: utils.rem(40);
+        
+        @include utils.breakpoint(utils.$size-lg){
+          flex-direction: row;
+          gap: utils.rem(101);
+          text-align: left;
+        }
+
+        .footer-list {
+          .list-title {
+            color: utils.$transparent;
+            margin-bottom: utils.rem(22);
+          }
+          .list {
+              display: flex;
+              flex-direction: column;
+              gap: utils.rem(10);
+              color: utils.$gray;
+
+              .list-item {
+                @include utils.breakpoint(utils.$size-lg){
+                  cursor: pointer;
+
+                  &:hover {
+                    transition: utils.$duration;
+                    color: utils.$cyan;
+                  }   
+                }
+              }
+            } 
+          }
+        }
+
+        @include utils.breakpoint(utils.$size-lg){
+          flex-direction: row;
+          gap: utils.rem(101);
+        }
+      }  
+
+      .footer-icons {
+        margin-top: utils.rem(48);
+        display: flex;
+        gap: utils.rem(24);
+
+        @include utils.breakpoint(utils.$size-lg){
+          margin-top: 0;
+        }
+
+        .social-icon {
+          widows: 24px;
+          height: 24px;
+
+          @include utils.breakpoint(utils.$size-lg){
+            cursor: pointer;
+
+            &:hover {
+              filter: invert(56%) sepia(100%) saturate(304%) hue-rotate(131deg) brightness(99%) contrast(100%);
+              transition-duration: 200ms;
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,4 +1,4 @@
-#Shortly URL shortening Landing Page 
+# Shortly URL shortening Landing Page 
 Shortly URL shortening API Challenge from Frontend Mentor
 
 ## Screenshots

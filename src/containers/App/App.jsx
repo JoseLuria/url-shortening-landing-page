@@ -20,6 +20,7 @@ function App() {
     const result = await response.json()
     if(result.ok){
       setLinks([...links, result.result])
+      setUrlText("")
     }
   }
 

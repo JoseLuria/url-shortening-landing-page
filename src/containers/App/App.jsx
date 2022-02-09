@@ -20,7 +20,9 @@ function App() {
     const result = await response.json()
     if(result.ok){
       setLinks([...links, result.result])
-      setUrlText("")
+      setUrlText("") 
+    }else{
+      setError("Please add a correct link")
     }
   }
 
@@ -29,7 +31,7 @@ function App() {
     if(urlText.length > 0 && urlText.includes(".com")){
       handleApi(urlText)
     }else {
-      setError("Please add a link")
+      setError("Please add a correct link")
     }
   }
 

@@ -5,28 +5,13 @@ import IconBrand from "../../assets/icon-brand-recognition.svg"
 import IconRecords from "../../assets/icon-detailed-records.svg"
 import IconCustomize from "../../assets/icon-fully-customizable.svg"
 import CustomButton from '../../components/CustomButton/CustomButton';
-import Form from "../../components/Form/Form"
 
-const Main = ({
-    children, 
-    handleSetUrl, 
-    urlText, 
-    handleGetUrl,
-    error
-  }) => {
+const Main = ({children}) => {
 
   return (
     <main className="main">
       <div className="main-container">
-        <Form
-          urlText={urlText}
-          handleSetUrl={handleSetUrl}
-          handleGetUrl={handleGetUrl}
-          error={error}
-        />
-        <section className="links-section">
-          {children}
-        </section>
+        {children}
         <section className="statics-section">
           <h2 className="statics-title">Advanced Statistics</h2>
           <p className="statics-text">

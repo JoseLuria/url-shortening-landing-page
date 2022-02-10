@@ -4,6 +4,8 @@ import Main from "../Main/Main"
 import Footer from "../Footer/Footer"
 import LinkItem from "../../components/LinkItem/LinkItem"
 import { useState } from "react"
+import LinksSection from "../../components/LinksSection/LinksSection"
+import Form from "../../components/Form/Form"
 
 function App() {
   const [error, setError] = useState(false)
@@ -40,23 +42,26 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Main 
-        handleSetUrl={handleSetUrl}
-        urlText={urlText}
-        handleGetUrl={handleGetUrl}
-        error={error}
-      >
-        {
-          links.length > 0 && 
-            links.map((link, index) => 
-              <LinkItem 
-                key={index} 
-                url={link?.original_link} 
-                shorterUrl={link?.full_short_link}
-              />
-            )
-        }
-              </Main>
+        <Main>
+          <Form
+            urlText={urlText}
+            handleSetUrl={handleSetUrl}
+            handleGetUrl={handleGetUrl}
+            error={error}
+          /> 
+          <LinksSection>
+            {
+              links.length > 0 && 
+                links.map((link, index) => 
+                  <LinkItem 
+                    key={index} 
+                    url={link?.original_link} 
+                    shorterUrl={link?.full_short_link}
+                  />
+                )
+            } 
+          </LinksSection>
+        </Main>
       <Footer/>
     </div>
   )

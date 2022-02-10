@@ -1,0 +1,14 @@
+@use "../../scss/utils";
+
+.links-section {
+  margin: auto;
+  width: 100%;
+  max-width: utils.$max-w;
+  display: flex;
+  flex-direction: column;
+  gap: utils.rem(24);
+       
+  @include utils.breakpoint(utils.$size-md){
+    gap: utils.rem(16);
+  }
+}

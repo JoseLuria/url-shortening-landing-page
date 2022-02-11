@@ -30,11 +30,7 @@ function App() {
 
   const handleGetUrl = e => {
     e.preventDefault()
-    if(urlText.length > 0 && urlText.includes(".com")){
-      handleApi(urlText)
-    }else {
-      setError("Please add a correct link")
-    }
+    handleApi(urlText)
   }
 
   links.length > 5 && links.splice(0, 1)

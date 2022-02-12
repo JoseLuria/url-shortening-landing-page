@@ -1,11 +1,11 @@
-# Shortly URL shortening Landing Page 
+# 🤖Shortly URL shortening Landing Page 
 Shortly URL shortening API Challenge from Frontend Mentor
 
-## Screenshots
+## 🖼️ Screenshots
 
 ![Screenshot](./public/app-screenshot.png)
 
-## Usage
+## 🚀 Usage
 
 Clone and run the Repository
 
